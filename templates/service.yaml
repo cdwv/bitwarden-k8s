@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "bitwarden-k8s.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "bitwarden-k8s.name" . }}
+    helm.sh/chart: {{ include "bitwarden-k8s.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: {{ include "bitwarden-k8s.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
