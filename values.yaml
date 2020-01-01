@@ -70,6 +70,8 @@ tolerations: []
 
 affinity: {}
 
+podAnnotations: {}
+
 ## Persist data to a persitent volume
 persistence:
   enabled: false
