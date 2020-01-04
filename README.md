@@ -1,5 +1,5 @@
 # bitwarden-k8s
-Helm chart for deploying dani-garcia/bitwarden_rs in Kubernetes.
+Helm chart for deploying [dani-garcia/bitwarden_rs](https://github.com/dani-garcia/bitwarden_rs) in Kubernetes.
 
 ## TL;DR;
 
@@ -29,7 +29,7 @@ $ helm delete my-release
 The command removes all the Kubernetes components associated with the chart and deletes the release.
 
 ## More info on Helm
-Head over to cdwv/awesome-helm to learn more about Helm - the Kubernetes package manager.
+Head over to [cdwv/awesome-helm](https://github.com/cdwv/awesome-helm) to learn more about Helm - the Kubernetes package manager.
 
 License
 =======================================================================
