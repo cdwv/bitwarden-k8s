@@ -18,6 +18,10 @@ spec:
       labels:
         app.kubernetes.io/name: {{ include "bitwarden-k8s.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
+      annotations:
+{{- if .Values.podAnnotations }}
+{{ toYaml .Values.podAnnotations | indent 8 }}
+{{- end }}
     spec:
       containers:
         - name: {{ .Chart.Name }}
