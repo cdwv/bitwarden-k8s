@@ -72,6 +72,8 @@ affinity: {}
 
 podAnnotations: {}
 
+deploymentAnnotations: {}
+
 ## Persist data to a persitent volume
 persistence:
   enabled: false
