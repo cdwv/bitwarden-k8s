@@ -41,13 +41,13 @@ service:
 
 ingress:
   enabled: true
-  annotations: 
+  annotations:
     kubernetes.io/ingress.class: nginx
     kubernetes.io/tls-acme: "true"
   path: /
   hosts:
-    - bitwarden.example 
-  tls: 
+    - bitwarden.example
+  tls:
     - secretName: bitwarden-tls
       hosts:
         - bitwarden.example
@@ -80,3 +80,4 @@ persistence:
   #storageClass:
   #accessMode: ReadWriteOnce
   #size: 800Mi
+  #existingClaim: "bitwarden-pvc"
