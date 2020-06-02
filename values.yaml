@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: mprasil/bitwarden
+  repository: bitwardenrs/server
   tag: latest
   pullPolicy: IfNotPresent
 
@@ -26,6 +26,7 @@ env:
   # SMTP_FROM
   # SMTP_PORT
   # SMTP_SSL
+  # SMTP_EXPLICIT_TLS
   # SMTP_USERNAME
   # SMTP_PASSWORD
   # SHOW_PASSWORD_HINT
