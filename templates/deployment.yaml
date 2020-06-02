@@ -55,14 +55,15 @@ spec:
           volumeMounts:
           - name: data
             mountPath: /data
+
       volumes:
       - name: data
-      {{- if .Values.persistence.enabled }}
+        {{- if .Values.persistence.enabled }}
         persistentVolumeClaim:
-          claimName: {{ template "bitwarden-k8s.fullname" . }}
-      {{- else }}
+          claimName: {{ if .Values.persistence.existingClaim }}{{ .Values.persistence.existingClaim }}{{- else }}{{ template "bitwarden-k8s.fullname" . }}{{- end }}
+        {{- else }}
         emptyDir: {}
-      {{- end -}}
+        {{- end }}
     {{- with .Values.nodeSelector }}
       nodeSelector:
 {{ toYaml . | indent 8 }}
