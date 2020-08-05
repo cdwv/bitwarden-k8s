@@ -3,3 +3,10 @@ appVersion: "1.0"
 description: A Bitwarden Helm chart for Kubernetes
 name: bitwarden-k8s
 version: 0.1.5
+home: https://github.com/dani-garcia/bitwarden_rs
+icon: https://raw.githubusercontent.com/bitwarden/brand/master/icons/icon.svg
+sources:
+  - https://github.com/dani-garcia/bitwarden_rs
+maintainers:
+  - name: CodeWave
+    email: hello@codewave.eu
