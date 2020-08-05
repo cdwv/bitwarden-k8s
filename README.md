@@ -6,7 +6,7 @@ Helm chart for deploying [dani-garcia/bitwarden_rs](https://github.com/dani-garc
 ```console
 $ git clone https://github.com/cdwv/bitwarden-k8s
 $ cd bitwarden-k8s
-$ helm install .
+$ helm install ./chart/bitwarden-k8s
 ```
 
 
@@ -15,7 +15,7 @@ $ helm install .
 To install the chart with the release name `my-release`:
 
 ```console
-$ helm install --name my-release .
+$ helm install --name my-release ./chart/bitwarden-k8s
 ```
 
 ## Uninstalling the Chart
