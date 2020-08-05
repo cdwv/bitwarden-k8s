@@ -1,0 +1,22 @@
+apiVersion: v1
+entries:
+  bitwarden-k8s:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2020-08-05T22:20:30.834548474Z"
+    description: A Bitwarden Helm chart for Kubernetes
+    digest: 86dc0a07c4c78dee0976bbf2736f18074b086e1959131504904a28775d678b47
+    home: https://github.com/dani-garcia/bitwarden_rs
+    icon: https://raw.githubusercontent.com/bitwarden/brand/master/icons/icon.svg
+    maintainers:
+    - email: hello@codewave.eu
+      name: CodeWave
+      url: https://codewave.eu
+    name: bitwarden-k8s
+    sources:
+    - https://github.com/dani-garcia/bitwarden_rs
+    - https://github.com/cdwv/bitwarden-k8s
+    urls:
+    - https://github.com/cdwv/bitwarden-k8s/releases/download/bitwarden-k8s-0.1.5/bitwarden-k8s-0.1.5.tgz
+    version: 0.1.5
+generated: "2020-08-05T22:20:30.615375637Z"
