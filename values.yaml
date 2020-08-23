@@ -79,6 +79,6 @@ deploymentAnnotations: {}
 persistence:
   enabled: false
   accessMode: ReadWriteOnce
-  size: 800Mi
+  size: 1Gi
   #storageClass:
   #existingClaim: "bitwarden-pvc"
