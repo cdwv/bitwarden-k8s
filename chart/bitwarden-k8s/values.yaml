@@ -8,6 +8,8 @@ image:
   repository: bitwardenrs/server
   tag: latest
   pullPolicy: IfNotPresent
+  # imagePullSecrets for accessing private registries
+  # pullSecrets: regcred
 
 env:
   SIGNUPS_ALLOWED: true
