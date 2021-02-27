@@ -55,6 +55,9 @@ spec:
           volumeMounts:
           - name: data
             mountPath: /data
+            {{- if and .Values.persistence.enabled .Values.persistence.subPath }}
+            subPath: {{ .Values.persistence.subPath }}
+            {{- end }}            
       {{- if .Values.image.pullSecrets }}      
       imagePullSecrets:
         - name: {{ .Values.image.pullSecrets }}
