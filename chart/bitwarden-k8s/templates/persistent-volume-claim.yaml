@@ -14,8 +14,6 @@ spec:
     - {{ .Values.persistence.accessMode | quote }}
 {{- if .Values.persistence.storageClass }}
   storageClassName: "{{ .Values.persistence.storageClass }}"
-{{- else }}
-  storageClassName: ""
 {{- end }}
   resources:
     requests:
