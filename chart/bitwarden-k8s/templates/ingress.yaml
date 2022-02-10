@@ -1,7 +1,13 @@
 {{- if .Values.ingress.enabled -}}
 {{- $fullName := include "bitwarden-k8s.fullname" . -}}
 {{- $ingressPath := .Values.ingress.path -}}
-apiVersion: extensions/v1beta1
+{{- $ingressApiIsStable := eq (include "bitwarden-k8s.ingress.isStable" .) "true" -}}
+{{- $ingressSupportsIngressClassName := eq (include "bitwarden-k8s.ingress.supportsIngressClassName" .) "true" -}}
+{{- $ingressSupportsPathType := eq (include "bitwarden-k8s.ingress.supportsPathType" .) "true" -}}
+{{- $ingressPathType := .Values.ingress.pathType -}}
+{{- $servicePort := .Values.service.port -}}
+
+apiVersion: {{ include "bitwarden-k8s.ingress.apiVersion" . }}
 kind: Ingress
 metadata:
   name: {{ $fullName }}
@@ -31,8 +37,18 @@ spec:
       http:
         paths:
           - path: {{ $ingressPath }}
+            {{- if $ingressSupportsPathType }}
+            pathType: {{ $ingressPathType }}
+            {{- end }}
             backend:
+              {{- if $ingressApiIsStable }}
+              service:
+                name: {{ $fullName }}
+                port:
+                  number: {{ $servicePort }}
+              {{- else }}
               serviceName: {{ $fullName }}
-              servicePort: http
+              servicePort: {{ $servicePort }}
+              {{- end }}
   {{- end }}
 {{- end }}
