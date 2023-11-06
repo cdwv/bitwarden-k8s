@@ -1,4 +1,4 @@
-{{- if .Values.ingress.enabled -}}
+{{ if or (not (hasKey $.Values.ingress "enabled")) (eq (coalesce $.Values.ingress.enabled false) true) }}
 {{- $fullName := include "bitwarden-k8s.fullname" . -}}
 {{- $ingressPath := .Values.ingress.path -}}
 {{- $ingressApiIsStable := eq (include "bitwarden-k8s.ingress.isStable" .) "true" -}}
