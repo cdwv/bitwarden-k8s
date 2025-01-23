@@ -1,5 +1,5 @@
 # bitwarden-k8s
-Helm chart for deploying [dani-garcia/bitwarden_rs](https://github.com/dani-garcia/bitwarden_rs) in Kubernetes.
+Helm chart for deploying [dani-garcia/vaultwarden](https://github.com/dani-garcia/vaultwarden) in Kubernetes.
 
 ## TL;DR;
 

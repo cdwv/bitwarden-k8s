@@ -6,8 +6,8 @@ replicaCount: 1
 deployStrategy: RollingUpdate
 
 image:
-  repository: bitwardenrs/server
-  tag: latest
+  repository: vaultwarden/server
+  tag: 1.32.7
   pullPolicy: IfNotPresent
   # imagePullSecrets for accessing private registries
   # pullSecrets: regcred
